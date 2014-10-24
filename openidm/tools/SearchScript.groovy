@@ -129,7 +129,7 @@ if (query != null){
     where = " WHERE " + queryParser(query)
     log.ok("Search WHERE clause is: "+ where)
 }
-
+// searching a mysql database that I set up for this proof of concept.
 switch ( objectClass ) {
     case "__ACCOUNT__":
     sql.eachRow("select PERSON.Person_ID, PERSON.Preferred_First_Name, PERSON.FIRST_NAME, PERSON.LAST_NAME, PERSON.MIDDLE_INITIAL, PERSON.LAST_NAME, ORGANIZATION_MEMBER.USER_NAME, ELECTRONIC_MAIL.E_MAIL_ADDRESS from cam.PERSON, cam.ORGANIZATION_MEMBER, cam.ELECTRONIC_MAIL where PERSON.Person_ID = ORGANIZATION_MEMBER.FK_PERSON_ID AND PERSON.Person_ID = ELECTRONIC_MAIL.FK_PERSON_ID") {
